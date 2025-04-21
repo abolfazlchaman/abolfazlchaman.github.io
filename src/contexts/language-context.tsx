@@ -3,33 +3,43 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { getDictionary } from "@/app/[lang]/dictionaries";
-import en  from "@/dictionaries/en.json";
+import en from "@/dictionaries/en.json";
+import fa from "@/dictionaries/fa.json";
 
-type LanguageContextType = {
-  language: string;
-  setLanguage: (lang: string) => void;
-  dict: Awaited<ReturnType<typeof getDictionary>>;
-};
+const VALID_LANGUAGES = ["en-US", "fa"] as const;
+type ValidLanguage = (typeof VALID_LANGUAGES)[number];
+
+const isValidLanguage = (lang: string): lang is ValidLanguage =>
+  VALID_LANGUAGES.includes(lang as ValidLanguage);
+
+// Define the LanguageContextType interface
+interface LanguageContextType {
+  language: ValidLanguage;
+  setLanguage: (lang: ValidLanguage) => void;
+  dict: typeof en | typeof fa;
+}
 
 const LanguageContext = createContext<LanguageContextType>({
-  language: "en",
+  language: "en-US",
   setLanguage: () => null,
-  dict: en, // Use imported English dictionary as default
+  dict: en,
 });
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [cookies, setCookie] = useCookies(["language"]);
-  const [language, setLanguageState] = useState(cookies.language || "en");
-  const [dict, setDict] = useState<Awaited<ReturnType<typeof getDictionary>>>(en); // Initialize with en.json
+  const initialLang = isValidLanguage(cookies.language) ? cookies.language : "en-US";
+  const [language, setLanguageState] = useState<ValidLanguage>(initialLang);
+  const [dict, setDict] = useState(language === "fa" ? fa : en);
 
-  const setLanguage = (lang: string) => {
-    setLanguageState(lang);
-    setCookie("language", lang, { path: "/", maxAge: 31536000 });
+  const setLanguage = (lang: ValidLanguage) => {
+    if (isValidLanguage(lang)) {
+      setLanguageState(lang);
+      setCookie("language", lang, { path: "/", maxAge: 31536000 });
+    }
   };
 
   useEffect(() => {
-    document.documentElement.lang = language;
-    getDictionary(language).then(setDict);
+    getDictionary(language === "en-US" ? "en" : language).then(setDict);
   }, [language]);
 
   return (

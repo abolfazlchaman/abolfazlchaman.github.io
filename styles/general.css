@@ -164,9 +164,12 @@ screen size info http://andrelion.github.io/mediaquery/livedemo.html
   }
 }
 .contact__card__img {
-  aspect-ratio: initial;
+  aspect-ratio: 1/1;
   object-fit: cover;
+  border-radius: 50%;
   transform: rotate(-16deg);
+  width: 400px;
+  height: 400px;
 }
 #circle {
   width: 100%;
@@ -322,17 +325,11 @@ div.steps > *.iconify {
   padding-top: 0.3125rem;
   margin: 0rem 0.1rem;
 }
-.iconify:hover:not(
-    div.steps > .iconify,
-    .bgcircle > .iconify,
-    .last,
-    div.abtme__btn > *,
-    *.btn__selector > *,
-    .reset__transform > .iconify,
-    .btn__selector > a > *.iconify,
-    .skills__btn > *.iconify,
-    .workex__picon
-  ) {
+.iconify:hover:not(div.steps > .iconify, .bgcircle
+    > .iconify, .last, div.abtme__btn > *, *.btn__selector
+    > *, .reset__transform > .iconify, .btn__selector
+    > a
+    > *.iconify, .skills__btn > *.iconify, .workex__picon) {
   border-radius: 10px;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -362,7 +359,7 @@ div.steps > *.iconify {
 }
 .abtme__btn__container {
   margin-top: auto;
-  margin-bottom: 15px;
+  margin-bottom: auto;
 }
 .btn__kite {
   font-weight: bolder;
@@ -372,6 +369,18 @@ div.steps > *.iconify {
   font-size: 0.8rem;
   min-width: 4.5rem;
   min-height: 4.5rem;
+}
+.abtme__btn a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.abtme__btn .iconify {
+  font-size: 1.1rem;
+  opacity: 0.8;
 }
 .last {
   width: 6.5rem;
@@ -391,7 +400,7 @@ div.steps > *.iconify {
   font-size: 1.125rem;
 }
 .nav__loc__container {
-  margin-right: -0.1875rem;
+  /* margin-right: -0.1875rem; */
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -403,6 +412,11 @@ div.steps > *.iconify {
   -ms-flex-flow: nowrap row;
   flex-flow: nowrap row;
   width: 7.5rem;
+  text-align: left;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
 }
 .prbar {
   -webkit-box-pack: center;
@@ -656,6 +670,8 @@ h5.slice__content {
   max-height: 440px;
   width: 30rem;
   height: 30rem;
+  display: flex;
+  justify-self: center;
 }
 .sec__header {
   font-size: 3rem;
@@ -717,7 +733,28 @@ h5.slice__content {
   width: 12rem;
   height: 2.5rem;
 }
+.name-title {
+  margin: 0.75rem 0;
+  font-size: 2rem;
+}
 
+.role-title {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.experience-badge {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin: 0.4rem 0;
+}
+
+.nav__loc__container {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin: 0.4rem 0;
+}
 .contact__card {
   padding-right: 2rem;
   height: 16.25rem;
@@ -728,6 +765,8 @@ h5.slice__content {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  align-items: center;
+  display: flex;
 }
 .contact__card.ltr {
   padding-right: 0rem;
@@ -814,16 +853,11 @@ h5.slice__content {
   border-radius: 30px;
   margin: 5px 5px;
 }
-.iconify:not(
-    div.steps > .iconify,
-    .wing > a > .iconify,
-    div.reset__transform > .iconify,
-    div.bgcircle > .iconify,
-    .btn__selector > a > *.iconify,
-    .skills__btn > *.iconify,
-    .services__slice > *.iconify,
-    .workex__picon
-  ) {
+.iconify:not(div.steps > .iconify, .wing > a > .iconify, div.reset__transform
+    > .iconify, div.bgcircle > .iconify, .btn__selector
+    > a
+    > *.iconify, .skills__btn > *.iconify, .services__slice
+    > *.iconify, .workex__picon) {
   padding: 1%;
   width: 1.875rem;
   height: 1.875rem;
@@ -1632,11 +1666,9 @@ h5.slice__content {
     }
 
     .contact__card__img {
+      width: 300px;
+      height: 300px;
       margin-bottom: 20px;
-      min-width: 220px !important;
-      min-height: 220px !important;
-      width: 29rem;
-      height: 29rem;
     }
     .contact__card {
       padding-top: 310px;
@@ -1768,8 +1800,8 @@ h5.slice__content {
       min-width: 220px;
     }
     .contact__card__img {
-      min-width: 180px !important;
-      min-height: 180px !important;
+      width: 180px;
+      height: 180px;
     }
     .btn__selector > *.iconify {
       padding: 0px !important;
@@ -2052,3 +2084,72 @@ h5.slice__content {
   }
 }
 /* #endregion */
+
+/* hero resume pointer button */
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+.lowered-opacity{
+  opacity: 0.6;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.small-icon {
+  font-size: 0.75rem;
+}
+address {
+  margin: 0;
+}
+.resume-text {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-color);
+}
+
+.resume-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.resume-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--text-color);
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+.experience-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  margin: 0.25rem 0;
+}
+
+.experience-badge i {
+  display: flex;
+  align-items: center;
+}

@@ -19,20 +19,26 @@ export const metadata: Metadata = {
   description: "My Next.js experimental portfolio",
 };
 
-export default function RootLayout({
+export async function generateStaticParams() {
+  return [{ lang: 'en-US' }, { lang: 'fa' }]
+}
+
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
+  params: Promise<{ lang: 'en-US' | 'fa' }>
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={(await params).lang}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange>
-          {children}
+          <body>{children}</body>
         </ThemeProvider>
       </body>
     </html>

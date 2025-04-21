@@ -231,3 +231,36 @@ function themeHandler() {
   seperatorsHandler();
   picsHandler();
 }
+// Function to convert Gregorian year to Persian year
+function getPersianYear() {
+  const currentDate = new Date();
+  const gregorianYear = currentDate.getFullYear();
+  const persianYear = gregorianYear - 621; // Approximate conversion
+  return persianYear;
+}
+
+// Function to convert English digits to Persian digits
+function convertToPersianDigits(number) {
+  const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+  return number
+    .toString()
+    .split('')
+    .map((digit) => persianDigits[parseInt(digit, 10)])
+    .join('');
+}
+
+// Wait for the DOM to fully load
+document.addEventListener('DOMContentLoaded', () => {
+  // Set the Persian year in the footer with Persian digits
+  const persianYear = getPersianYear();
+  const persianYearElement = document.getElementById('current-year');
+  if (persianYearElement) {
+    persianYearElement.textContent = convertToPersianDigits(persianYear);
+  }
+
+  // Set the English year in the footer
+  const englishYearElement = document.getElementById('current-year-en');
+  if (englishYearElement) {
+    englishYearElement.textContent = new Date().getFullYear();
+  }
+});

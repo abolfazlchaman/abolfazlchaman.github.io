@@ -1,5 +1,11 @@
 {
   "developerInfo": {
     "fullName": "ابوالفضل چمن"
+  },
+  "theme": {
+    "toggle": "تغییر تم",
+    "light": "روشن",
+    "dark": "تاریک",
+    "system": "سیستم"
   }
 }

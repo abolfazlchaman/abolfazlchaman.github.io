@@ -34,6 +34,9 @@ const shabnam = localFont({
 export const metadata: Metadata = {
   title: "Abolfazl Chaman",
   description: "My Next.js experimental portfolio",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export async function generateStaticParams() {

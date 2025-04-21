@@ -52,7 +52,6 @@ export default async function RootLayout({
 }>) {
   const resolvedParams = await params;
   const dir = resolvedParams.lang === "fa" ? "rtl" : "ltr";
-
   return (
     <html
       lang={resolvedParams.lang}

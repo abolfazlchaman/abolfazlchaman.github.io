@@ -92,6 +92,11 @@
   font-family: var(--font-shabnam-variable);
 }
 
+[dir='rtl'] * {
+  text-align: right;
+  direction: rtl;
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -133,7 +138,23 @@
   body {
     @apply bg-background text-foreground font-sans;
   }
-  pre, code {
+  pre,
+  code {
     @apply font-mono;
+  }
+  :root[dir="rtl"] {
+    direction: rtl;
+  }
+
+  :root[dir="rtl"] * {
+    text-align: right;
+  }
+
+  :root[dir="ltr"] {
+    direction: ltr;
+  }
+
+  :root[dir="ltr"] * {
+    text-align: left;
   }
 }

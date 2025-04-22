@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Monitor } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/contexts/language-context";
 
@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function ModeToggle() {
-  const { setTheme } = useTheme();
+  const { setTheme, theme } = useTheme();
   const { dict } = useLanguage();
   return (
     <DropdownMenu>
@@ -28,9 +28,33 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>{dict.theme.light}</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>{dict.theme.dark}</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>{dict.theme.system}</DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setTheme("light")}
+          className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Sun className="h-4 w-4" />
+            {dict.theme.light}
+          </div>
+          {theme === "light" && <span className="text-primary">✓</span>}
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setTheme("dark")}
+          className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Moon className="h-4 w-4" />
+            {dict.theme.dark}
+          </div>
+          {theme === "dark" && <span className="text-primary">✓</span>}
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setTheme("system")}
+          className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Monitor className="h-4 w-4" />
+            {dict.theme.system}
+          </div>
+          {theme === "system" && <span className="text-primary">✓</span>}
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

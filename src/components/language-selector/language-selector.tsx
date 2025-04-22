@@ -63,9 +63,12 @@ export function LanguageSelector() {
           <DropdownMenuItem
             key={lang.code}
             onClick={() => setLanguage(lang.code)}
-            className={pathname === lang.path ? "bg-muted" : ""}
+            className="flex items-center justify-between"
           >
-            {lang.label}
+            <div className="flex items-center gap-2">
+              {lang.label}
+            </div>
+            {pathname === lang.path && <span className="text-primary">✓</span>}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

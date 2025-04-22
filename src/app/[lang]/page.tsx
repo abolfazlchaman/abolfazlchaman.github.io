@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero/hero";
 import { getDictionary } from "./dictionaries";
 import About from "@/components/about/about";
 import { Footer } from "@/components/footer/footer";
+import { Projects } from "@/components/projects/projects";
 
 export default async function Page({ params }: { params: Promise<{ lang: "en" | "fa" }> }) {
   const { lang } = await params;
@@ -14,6 +15,7 @@ export default async function Page({ params }: { params: Promise<{ lang: "en" | 
       <div className="container md:px-40 lg:px-60 xl:px-80 px-10 min-w-full">
         <Hero />
         <About />
+        <Projects />
       </div>
       <Footer />
     </main>

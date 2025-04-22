@@ -1,4 +1,5 @@
 {
+  "language": "en",
   "developerInfo": {
     "fullName": "Abolfazl chaman",
     "profession": "Web Developer, Consultant",
@@ -17,6 +18,10 @@
     "projects": "Projects",
     "blog": "Blog",
     "toggle_menu": "Toggle menu"
+  },
+  "footer": {
+    "quote": "An idiot admires complexity, a genius admires simplicity",
+    "author": "Terry A. Davis",
+    "copyrightText": "All rights reserved."
   }
 }
-

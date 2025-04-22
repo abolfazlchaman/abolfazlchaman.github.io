@@ -1,4 +1,7 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/language-context";
 import { Github, Mail, Linkedin, MessageCircle, Phone } from "lucide-react";
 
 const socialLinks = [
@@ -14,8 +17,13 @@ const footerLinks = [
   { label: "Projects", href: "/projects" },
   { label: "Blog", href: "/blog" },
 ];
-
+function getJalaliYear() {
+  const date = new Date();
+  const year = date.getFullYear() - 621;
+  return year;
+}
 export function Footer() {
+  const { dict } = useLanguage();
   return (
     <footer className="container mx-auto p-4 pt-6 mt-6 border-t border-gray-200 dark:border-gray-700">
       <div className="flex flex-wrap justify-center mb-4">
@@ -50,11 +58,11 @@ export function Footer() {
       </div>
       <br />
       <blockquote className="text-center text-sm text-gray-500 dark:text-gray-400">
-        &ldquo;An idiot admires complexity, a genius admires simplicity&rdquo; - Terry A. Davis
-      </blockquote>
-      {" "}
+        &ldquo;{dict.footer.quote}&rdquo; - {dict.footer.author}
+      </blockquote>{" "}
       <p className="text-center text-sm text-gray-500 mt-4 dark:text-gray-400">
-        &copy; {new Date().getFullYear()} Abolfazl Chaman. All rights reserved.
+        &copy; {dict.language === "fa" ? getJalaliYear() : new Date().getFullYear()}{" "}
+        {dict.developerInfo.fullName} | {dict.footer.copyrightText}
       </p>
     </footer>
   );

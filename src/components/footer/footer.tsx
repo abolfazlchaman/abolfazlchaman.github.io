@@ -1,0 +1,61 @@
+import { Button } from "@/components/ui/button";
+import { Github, Mail, Linkedin, MessageCircle, Phone } from "lucide-react";
+
+const socialLinks = [
+  { icon: Github, href: "https://github.com/abolfazlchaman", label: "GitHub" },
+  { icon: Mail, href: "mailto:abolfazl.chaman@gmail.com", label: "Email" },
+  { icon: Linkedin, href: "https://linkedin.com/in/abolfazlchaman", label: "LinkedIn" },
+  { icon: MessageCircle, href: "https://t.me/abolfazlchaman", label: "Telegram" },
+  { icon: Phone, href: "https://wa.me/+989171234567", label: "WhatsApp" },
+];
+
+const footerLinks = [
+  { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Blog", href: "/blog" },
+];
+
+export function Footer() {
+  return (
+    <footer className="container mx-auto p-4 pt-6 mt-6 border-t border-gray-200 dark:border-gray-700">
+      <div className="flex flex-wrap justify-center mb-4">
+        {footerLinks.map((link) => (
+          <Button
+            key={link.label}
+            variant="link"
+            size="sm"
+            asChild
+            className="gap-2">
+            <a href={link.href}>{link.label}</a>
+          </Button>
+        ))}
+      </div>
+      <div className="flex flex-wrap justify-center mb-4 space-x-4">
+        {socialLinks.map((link) => (
+          <Button
+            key={link.label}
+            variant="outline"
+            size="sm"
+            asChild
+            className="gap-2">
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer">
+              <link.icon className="w-4 h-4" />
+              <span className="sr-only">{link.label}</span>
+            </a>
+          </Button>
+        ))}
+      </div>
+      <br />
+      <blockquote className="text-center text-sm text-gray-500 dark:text-gray-400">
+        &ldquo;An idiot admires complexity, a genius admires simplicity&rdquo; - Terry A. Davis
+      </blockquote>
+      {" "}
+      <p className="text-center text-sm text-gray-500 mt-4 dark:text-gray-400">
+        &copy; {new Date().getFullYear()} Abolfazl Chaman. All rights reserved.
+      </p>
+    </footer>
+  );
+}

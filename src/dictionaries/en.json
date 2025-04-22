@@ -7,5 +7,12 @@
     "light": "Light",
     "dark": "Dark",
     "system": "System"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "blog": "Blog",
+    "toggle_menu": "Toggle menu"
   }
 }

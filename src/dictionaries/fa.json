@@ -7,5 +7,12 @@
     "light": "روشن",
     "dark": "تاریک",
     "system": "سیستم"
+  },
+  "navigation": {
+    "home": "خانه",
+    "about": "درباره من",
+    "projects": "پروژه‌ها",
+    "blog": "بلاگ",
+    "toggle_menu": "تغییر منو"
   }
 }

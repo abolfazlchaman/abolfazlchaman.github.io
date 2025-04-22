@@ -1,15 +1,13 @@
-import { ModeToggle } from "@/components/theme-toggler/theme-toggler";
-import { getDictionary } from "./dictionaries";
-import { LanguageSelector } from "@/components/language-selector/language-selector";
+import { Navigation } from "@/components/navigation/navigation"
+import { getDictionary } from "./dictionaries"
 
 export default async function Page({ params }: { params: Promise<{ lang: "en" | "fa" }> }) {
-  const { lang } = await params;
-  const dict = await getDictionary(lang); // en
+  const { lang } = await params
+  const dict = await getDictionary(lang)
+
   return (
-    <nav className="flex row m-2 space-x-4 items-center p-2 border-b-2">
-      <h1>{dict.developerInfo.fullName}</h1>
-      <ModeToggle />
-      <LanguageSelector />
-    </nav>
-  ); // Add to Cart
+    <main>
+      <Navigation fullName={dict.developerInfo.fullName} />
+    </main>
+  )
 }

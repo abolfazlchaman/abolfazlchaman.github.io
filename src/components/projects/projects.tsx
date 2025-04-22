@@ -18,7 +18,21 @@ export function Projects() {
           image=""
         />
         <Project
+          title="Tetha"
+          link="[https://project1.com](https://project1.com)"
+          tech={["React", "Next.js", "TypeScript"]}
+          description="This is a brief description of Project 1"
+          image=""
+        />
+        <Project
           title="Beta"
+          link="[https://project2.com](https://project2.com)"
+          tech={["Vue.js", "Nuxt.js", "JavaScript"]}
+          description="This is a brief description of Project 2"
+          image=""
+        />
+        <Project
+          title="Delta"
           link="[https://project2.com](https://project2.com)"
           tech={["Vue.js", "Nuxt.js", "JavaScript"]}
           description="This is a brief description of Project 2"

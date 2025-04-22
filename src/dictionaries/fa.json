@@ -1,6 +1,9 @@
 {
   "developerInfo": {
-    "fullName": "ابوالفضل چمن"
+    "fullName": "ابوالفضل چمن",
+    "profession": "توسعه‌دهنده وب، مشاور",
+    "experience": "۵+ سال تجربه",
+    "location": "شیراز، ایران"
   },
   "theme": {
     "toggle": "تغییر تم",
@@ -16,3 +19,4 @@
     "toggle_menu": "تغییر منو"
   }
 }
+

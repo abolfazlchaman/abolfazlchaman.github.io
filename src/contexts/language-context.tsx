@@ -13,7 +13,7 @@ const isValidLanguage = (lang: string): lang is ValidLanguage =>
   VALID_LANGUAGES.includes(lang as ValidLanguage);
 
 // Define the LanguageContextType interface
-interface LanguageContextType {
+export interface LanguageContextType {
   language: ValidLanguage;
   setLanguage: (lang: ValidLanguage) => void;
   dict: typeof en | typeof fa;

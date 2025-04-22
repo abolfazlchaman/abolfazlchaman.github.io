@@ -23,5 +23,10 @@
     "quote": "An idiot admires complexity, a genius admires simplicity",
     "author": "Terry A. Davis",
     "copyrightText": "All rights reserved."
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a web developer with a passion for building fast and scalable applications. <br /> I have <strong>5+ years of experience</strong> in the field and have worked on a variety of projects, from small startups to large enterprises. <br /> My expertise includes <strong>JavaScript</strong>, <strong>React</strong>, <strong>Next.js</strong>, and <strong>Node.js</strong>.",
+    "buttonTextEn": "View CV"
   }
 }

@@ -28,5 +28,59 @@
     "title": "About Me",
     "description": "I'm a web developer with a passion for building fast and scalable applications. <br /> I have <strong>5+ years of experience</strong> in the field and have worked on a variety of projects, from small startups to large enterprises. <br /> My expertise includes <strong>JavaScript</strong>, <strong>React</strong>, <strong>Next.js</strong>, and <strong>Node.js</strong>.",
     "buttonTextEn": "View CV"
+  },
+  "skills": {
+    "title": "Some of the Technologies I've mastered",
+    "sub": "This is not an exhaustive list, but rather a selection of my favorites."
+  },
+  "projects": {
+    "title": "Handful of projects I've collaborated on",
+    "subtitle": "This is not a complete list but rather a selection of projects I have contributed to.",
+    "projectsData": [
+      {
+        "title": "Alpha",
+        "description": "Alpha is a project management tool that helps teams collaborate and track progress.",
+        "link": "https://delta.com",
+        "technologies": [
+          "vue",
+          "next",
+          "tailwind",
+          "theta"
+        ]
+      },
+      {
+        "title": "Beta",
+        "description": "Beta is a project management tool that helps teams collaborate and track progress.",
+        "link": "https://delta.com",
+        "technologies": [
+          "react",
+          "next",
+          "tailwind",
+          "theta"
+        ]
+      },
+      {
+        "title": "Theta",
+        "description": "Theta is a project management tool that helps teams collaborate and track progress.",
+        "link": "https://delta.com",
+        "technologies": [
+          "python",
+          "next",
+          "tailwind",
+          "theta"
+        ]
+      },
+      {
+        "title": "Hexa",
+        "description": "Hexa is a project management tool that helps teams collaborate and track progress.",
+        "link": "https://delta.com",
+        "technologies": [
+          "csharp",
+          "next",
+          "tailwind",
+          "theta"
+        ]
+      }
+    ]
   }
 }

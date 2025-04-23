@@ -1,13 +1,17 @@
+'use client'
+import { useLanguage } from "@/contexts/language-context";
 import { Skill } from "../skill/skill";
 import { SiAmazonwebservices, SiCypress, SiGraphql, SiJavascript, SiJest, SiNextdotjs, SiNodedotjs, SiReact, SiRedux, SiTailwindcss, SiTypescript } from "react-icons/si";
 export function Skills() {
+  const { dict } = useLanguage();
+
   return (
     <section className="container min-h-[calc(100vh-64px)] min-w-full flex flex-col items-center justify-center">
       <h2 className="text-3xl font-semibold tracking-tight mb-5 text-center">
-        Some of the Technologies I've mastered
+        {dict.skills.title}
       </h2>
       <p className="text-lg text-muted-foreground text-justify mb-10">
-        This is not an exhaustive list, but rather a selection of my favorites.
+      {dict.skills.sub}
       </p>
       <div className="flex flex-wrap justify-center gap-10">
       <Skill

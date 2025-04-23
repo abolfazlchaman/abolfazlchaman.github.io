@@ -17,7 +17,7 @@ const getNavigationItems = (dict: any) => [
   { label: dict.navigation.blog, icon: SiBloglovin, href: "/blog" },
 ];
 
-export function Navigation({ fullName }: { fullName: string }) {
+export function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false);
   const { dict } = useLanguage();
   const navigationItems = getNavigationItems(dict);
@@ -26,7 +26,7 @@ export function Navigation({ fullName }: { fullName: string }) {
     <nav className="fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
       <div className="container min-w-full flex h-16 items-center justify-between px-4 md:px-6">
         <div className="relative z-50">
-          <h1 className={cn("font-semibold", isOpen && "text-foreground")}>{fullName}</h1>
+          <h1 className={cn("font-semibold", isOpen && "text-foreground")}>{dict.developerInfo.fullName}</h1>
         </div>
 
         {/* Desktop Navigation */}

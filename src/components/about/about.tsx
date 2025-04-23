@@ -18,7 +18,7 @@ export function About() {
   const aboutDict = dict.about as AboutDict;
   return (
     <section className="container min-h-[calc(100vh-64px)] min-w-full flex md:flex-row flex-col-reverse items-center justify-center">
-      <div className="space-y-2 flex text-justify flex-col justify-center items-center md:mx-10 md:w-1/2">
+      <div className="space-y-2 flex text-justify md:flex-col justify-center items-center md:mx-10 md:flex-col">
         <h2 className="text-3xl font-bold mb-4">{aboutDict.title}</h2>
 
         <p
@@ -27,16 +27,6 @@ export function About() {
         />
 
         <div className="flex flex-row justify-center gap-2 mt-5">
-          <Button
-            variant="link"
-            size="sm"
-            asChild
-            className="gap-2">
-            <a href="/about">
-              <FaExternalLinkAlt className="mr-2 h-4 w-4" />
-              About Me
-            </a>
-          </Button>
 
           <Button
               variant="outline"
@@ -47,6 +37,8 @@ export function About() {
                 target="_blank"
                 rel="noopener noreferrer">
               {aboutDict.buttonTextEn}
+              <FaExternalLinkAlt className="mr-2 h-4 w-4" />
+
               </a>
             </Button>
 
@@ -60,15 +52,18 @@ export function About() {
                 target="_blank"
                 rel="noopener noreferrer">
                 {aboutDict.buttonTextFa}
+              <FaExternalLinkAlt className="mr-2 h-4 w-4" />
+
               </a>
             </Button>
           )}
         </div>
+      </div>
         <Image
           src={img}
           alt="About Image"
+          className="h-auto w-full md:w-1/2 rounded-[3px] overflow-hidden shadow-[0px_4px_30px_0px_rgba(0,0,0,0.20)] dark:shadow-[0px_4px_30px_0px_rgba(255,255,255,0.20)] transition-transform transform m-10"
         />
-      </div>
       {/* <div className="relative w-full h-[500px] md:w-1/2 rounded-[3px] overflow-hidden shadow-[0px_4px_30px_0px_rgba(0,0,0,0.20)] dark:shadow-[0px_4px_30px_0px_rgba(255,255,255,0.20)] transition-transform transform m-10">
         <Image
           src={img.src}

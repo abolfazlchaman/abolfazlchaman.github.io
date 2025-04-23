@@ -16,10 +16,15 @@ export function About() {
   const { dict } = useLanguage();
   const aboutDict = dict.about as AboutDict;
   return (
-    <section className="container min-h-[calc(100vh-64px)] min-w-full flex md:flex-row flex-col-reverse md:flex-row items-center justify-center">
+    <section className="container min-h-[calc(100vh-64px)] min-w-full flex md:flex-row flex-col-reverse items-center justify-center">
       <div className="space-y-2 flex text-justify flex-col justify-center items-center md:mx-10 md:w-1/2">
-        <h2 className="text-3xl font-bold mb-4">{dict.about.title}</h2>
-        <p className="text-lg mb-4">{dict.about.description}</p>
+        <h2 className="text-3xl font-bold mb-4">{aboutDict.title}</h2>
+
+        <p
+          className="text-lg mb-4 text-justify"
+          dangerouslySetInnerHTML={{ __html: aboutDict.description }}
+        />
+
         <div className="flex flex-row justify-center gap-2 mt-5">
           <Button
             variant="outline"
@@ -39,7 +44,7 @@ export function About() {
               size="sm"
               asChild>
               <a
-                href="https://example.com/english-cv.pdf"
+                href="https://example.com/persian-cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer">
                 {aboutDict.buttonTextFa}

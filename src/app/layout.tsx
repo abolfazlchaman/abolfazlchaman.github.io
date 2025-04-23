@@ -12,17 +12,17 @@ const geistMono = Geist_Mono({
 const shabnam = localFont({
   src: [
     {
-      path: "../../../public/fonts/Shabnam-Light.woff2",
+      path: "../../public/fonts/Shabnam-Light.woff2",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../../../public/fonts/Shabnam.woff2",
+      path: "../../public/fonts/Shabnam.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../../public/fonts/Shabnam-Bold.woff2",
+      path: "../../public/fonts/Shabnam-Bold.woff2",
       weight: "700",
       style: "normal",
     },

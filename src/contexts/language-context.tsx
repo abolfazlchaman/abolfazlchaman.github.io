@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
-import { getDictionary } from "@/app/[lang]/dictionaries";
+import { getDictionary } from "@/app/dictionaries";
 import en from "@/dictionaries/en.json";
 import fa from "@/dictionaries/fa.json";
 

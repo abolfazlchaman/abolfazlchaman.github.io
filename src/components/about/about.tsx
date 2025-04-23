@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import img from "../../../public/about.webp";
 import { useLanguage } from "@/contexts/language-context";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 interface AboutDict {
   title: string;
@@ -27,16 +28,27 @@ export function About() {
 
         <div className="flex flex-row justify-center gap-2 mt-5">
           <Button
-            variant="outline"
+            variant="link"
             size="sm"
-            asChild>
-            <a
-              href="https://example.com/english-cv.pdf"
-              target="_blank"
-              rel="noopener noreferrer">
-              {aboutDict.buttonTextEn}
+            asChild
+            className="gap-2">
+            <a href="/about">
+              <FaExternalLinkAlt className="mr-2 h-4 w-4" />
+              About Me
             </a>
           </Button>
+
+          <Button
+              variant="outline"
+              size="sm"
+              asChild>
+              <a
+              href="https://www.canva.com/design/DAGlPFpIzXE/YbsJ7SQxp1lziZM7JTuJ6A/edit?utm_content=DAGlPFpIzXE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                target="_blank"
+                rel="noopener noreferrer">
+              {aboutDict.buttonTextEn}
+              </a>
+            </Button>
 
           {dict.language === "fa" && (
             <Button
@@ -44,7 +56,7 @@ export function About() {
               size="sm"
               asChild>
               <a
-                href="https://example.com/persian-cv.pdf"
+                href="https://www.canva.com/design/DAGlPNcrp6k/rngftrUqx0EOZ414RjdLPg/edit?utm_content=DAGlPNcrp6k&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
                 target="_blank"
                 rel="noopener noreferrer">
                 {aboutDict.buttonTextFa}

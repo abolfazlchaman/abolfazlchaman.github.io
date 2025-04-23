@@ -9,7 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Languages } from "lucide-react"
+import { SiGoogletranslate } from "react-icons/si"
 import { useRouter, usePathname } from "next/navigation"
 import { useCookies } from "react-cookie"
 
@@ -24,12 +24,9 @@ export function LanguageSelector() {
   const [cookies, setCookie] = useCookies(["language"])
 
   const detectLanguage = () => {
-    // Check cookie first
     if (cookies.language) {
       return cookies.language
     }
-
-    // Check browser language
     const browserLang = navigator.language || navigator.languages[0]
     const supportedLang = languages.find(lang => 
       browserLang.startsWith(lang.code)
@@ -38,7 +35,7 @@ export function LanguageSelector() {
   }
 
   const setLanguage = (lang: string) => {
-    setCookie("language", lang, { path: "/", maxAge: 31536000 }) // 1 year
+    setCookie("language", lang, { path: "/", maxAge: 31536000 })
     const langPath = languages.find(l => l.code === lang)?.path || "/"
     router.push(langPath)
   }
@@ -54,7 +51,7 @@ export function LanguageSelector() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
-          <Languages className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
+          <SiGoogletranslate className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
           <span className="sr-only">Toggle language</span>
         </Button>
       </DropdownMenuTrigger>

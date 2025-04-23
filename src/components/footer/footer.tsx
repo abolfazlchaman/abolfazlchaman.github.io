@@ -2,14 +2,15 @@
 
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/language-context";
-import { Github, Mail, Linkedin, MessageCircle, Phone } from "lucide-react";
+import { SiGithub, SiGmail, SiLinkedin, SiTelegram } from "react-icons/si";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/abolfazlchaman", label: "GitHub" },
-  { icon: Mail, href: "mailto:abolfazl.chaman@gmail.com", label: "Email" },
-  { icon: Linkedin, href: "https://linkedin.com/in/abolfazlchaman", label: "LinkedIn" },
-  { icon: MessageCircle, href: "https://t.me/abolfazlchaman", label: "Telegram" },
-  { icon: Phone, href: "https://wa.me/+989171234567", label: "WhatsApp" },
+  { icon: SiGithub, href: "https://github.com/abolfazlchaman", label: "GitHub" },
+  { icon: SiGmail, href: "mailto:abolfazl.chaman@gmail.com", label: "Email" },
+  { icon: SiLinkedin, href: "https://linkedin.com/in/abolfazlchaman", label: "LinkedIn" },
+  { icon: SiTelegram, href: "https://t.me/abolfazlchaman", label: "Telegram" },
+  { icon: IoLogoWhatsapp, href: "https://wa.me/+989171234567", label: "WhatsApp" },
 ];
 
 const footerLinks = [
@@ -17,11 +18,13 @@ const footerLinks = [
   { label: "Projects", href: "/projects" },
   { label: "Blog", href: "/blog" },
 ];
+
 function getJalaliYear() {
   const date = new Date();
   const year = date.getFullYear() - 621;
   return year;
 }
+
 export function Footer() {
   const { dict } = useLanguage();
   return (

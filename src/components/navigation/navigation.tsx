@@ -3,17 +3,18 @@
 import * as React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Menu, X, Home, User, Code, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/theme-toggler/theme-toggler";
 import { LanguageSelector } from "@/components/language-selector/language-selector";
 import { useLanguage } from "@/contexts/language-context";
+import { SiHomeadvisor, SiCircle, SiGithub, SiBloglovin } from "react-icons/si";
+import { Menu, X } from "lucide-react";
 
 const getNavigationItems = (dict: any) => [
-  { label: dict.navigation.home, icon: Home, href: "/" },
-  { label: dict.navigation.about, icon: User, href: "/about" },
-  { label: dict.navigation.projects, icon: Code, href: "/projects" },
-  { label: dict.navigation.blog, icon: FileText, href: "/blog" },
+  { label: dict.navigation.home, icon: SiHomeadvisor, href: "/" },
+  { label: dict.navigation.about, icon: SiCircle, href: "/about" },
+  { label: dict.navigation.projects, icon: SiGithub, href: "/projects" },
+  { label: dict.navigation.blog, icon: SiBloglovin, href: "/blog" },
 ];
 
 export function Navigation({ fullName }: { fullName: string }) {

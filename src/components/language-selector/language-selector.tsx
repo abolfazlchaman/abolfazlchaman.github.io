@@ -1,51 +1,48 @@
 "use client"
 
-import * as React from "react"
-import { useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import * as React from "react";
+import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { SiGoogletranslate } from "react-icons/si"
-import { useRouter, usePathname } from "next/navigation"
-import { useCookies } from "react-cookie"
+} from "@/components/ui/dropdown-menu";
+import { SiGoogletranslate } from "react-icons/si";
+import { useCookies } from "react-cookie";
+import { useLanguage } from "@/contexts/language-context";
 
 const languages = [
-  { code: "en-US", label: "English", path: "/" },
-  { code: "fa", label: "فارسی", path: "/fa" },
-]
-
+  { code: "en-US", label: "English" },
+  { code: "fa", label: "فارسی" },
+];
 export function LanguageSelector() {
-  const router = useRouter()
-  const pathname = usePathname()
-  const [cookies, setCookie] = useCookies(["language"])
+  const [cookies, setCookie] = useCookies(["language"]);
+  const { language, setLanguage } = useLanguage();
 
   const detectLanguage = () => {
     if (cookies.language) {
-      return cookies.language
+      return cookies.language;
     }
-    const browserLang = navigator.language || navigator.languages[0]
-    const supportedLang = languages.find(lang => 
+    const browserLang = navigator.language || navigator.languages[0];
+    const supportedLang = languages.find((lang) =>
       browserLang.startsWith(lang.code)
-    )
-    return supportedLang?.code || "en-US"
-  }
-
-  const setLanguage = (lang: string) => {
-    setCookie("language", lang, { path: "/", maxAge: 31536000 })
-    const langPath = languages.find(l => l.code === lang)?.path || "/"
-    router.push(langPath)
-  }
+    );
+    return supportedLang?.code || "en-US";
+  };
 
   useEffect(() => {
-    const detectedLang = detectLanguage()
-    if (detectedLang !== cookies.language) {
-      setLanguage(detectedLang)
+    const detectedLanguage = detectLanguage();
+    if (detectedLanguage !== language) {
+      setLanguage(detectedLanguage);
     }
-  }, [])
+  }, []);
+
+  const handleLanguageChange = (langCode: any) => {
+    setLanguage(langCode);
+    setCookie("language", langCode, { path: "/", maxAge: 31536000 });
+  };
 
   return (
     <DropdownMenu>
@@ -59,16 +56,16 @@ export function LanguageSelector() {
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => setLanguage(lang.code)}
+            onClick={() => handleLanguageChange(lang.code)}
             className="flex items-center justify-between"
           >
             <div className="flex items-center gap-2">
               {lang.label}
             </div>
-            {pathname === lang.path && <span className="text-primary">✓</span>}
+            {language === lang.code && <span className="text-primary">✓</span>}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

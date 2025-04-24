@@ -83,6 +83,12 @@
       "Creativity"
     ]
   },
+  "inspiration": {
+    "title": "Inspirations",
+    "description": "I find inspiration from a variety of people and ideas. Please note that liking a quote or person does not represent my work or endorse any negative actions they may have taken.",
+    "seeAllInspirations": "See all",
+    "seeAllQuotes": "See all quotes"
+  },
   "projects": {
     "title": "Handful of projects I've collaborated on",
     "subtitle": "This is not a complete list but rather a selection of projects I have contributed to.",

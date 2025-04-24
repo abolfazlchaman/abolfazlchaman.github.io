@@ -95,47 +95,59 @@
     "subtitle": "این یک فهرست کامل نیست بلکه گزیده‌ای از پروژه‌هایی است که در آن‌ها مشارکت داشته‌ام.",
     "projectsData": [
       {
-        "title": "Alpha",
-        "description": "آلفا یک ابزار مدیریت پروژه است که به تیم‌ها کمک می‌کند با هم همکاری کنند و پیشرفت را دنبال کنند.",
-        "link": "https://delta.com",
+        "title": "Digimenu",
+        "description": "دیجیتال منو منیجر با قابلیت های متعدد ویرایش قیمت،تصویر ،حذف، اضافه کردن دسته بندی و آیتم ها با اسکن.",
+        "link": "https://www.mydigimenu.ir",
+        "image": "/images/qrmenu.webp",
         "technologies": [
-          "vue",
-          "next",
-          "tailwind",
-          "theta"
+          "React",
+          "Express",
+          "MongoDB",
+          "nodejs",
+          "Material-ui",
+          "javascript",
+          "JavaScript",
+          "HTML",
+          "CSS"
         ]
       },
       {
-        "title": "Beta",
-        "description": "بتا یک ابزار مدیریت پروژه است که به تیم‌ها کمک می‌کند با هم همکاری کنند و پیشرفت را دنبال کنند.",
-        "link": "https://delta.com",
+        "title": "Abolfazl Chaman",
+        "description": "وبسایت و پورتفولیو من بر اساس زبان های خام وب با طراحی نئومورفیک ",
+        "link": "https://www.abolfazlchaman.ir",
+        "image": "/images/portfolio.webp",
         "technologies": [
-          "react",
-          "next",
-          "tailwind",
-          "theta"
+          "JavaScript",
+          "HTML5",
+          "CSS3",
+          "iconify",
+          "Figma"
         ]
       },
       {
-        "title": "Theta",
-        "description": "تتا یک ابزار مدیریت پروژه است که به تیم‌ها کمک می‌کند با هم همکاری کنند و پیشرفت را دنبال کنند.",
-        "link": "https://delta.com",
+        "title": "Visabird",
+        "description": "اپلیکیشن اپن سورس برای مشاهده شرکت های خارجی از سرتاسر دنیا که در زمینه های شغلی مختلف ویزای کاری صادر کرده اند.",
+        "link": "https://www.visabird.ir",
+        "image": "/images/visabird.webp",
         "technologies": [
-          "python",
-          "next",
-          "tailwind",
-          "theta"
+          "Nextjs",
+          "TailwindCss",
+          "javascript",
+          "CSS",
+          "HTML"
         ]
       },
       {
-        "title": "Hexa",
-        "description": "هگزا یک ابزار مدیریت پروژه است که به تیم‌ها کمک می‌کند با هم همکاری کنند و پیشرفت را دنبال کنند.",
-        "link": "https://delta.com",
+        "title": "Ultradeal",
+        "description": "قیمت و نوسانات 300 ارز دیجیتال برتر به صورت آنی",
+        "link": "https://www.ultradeal.ir",
+        "image": "/images/cryptoman.webp",
         "technologies": [
-          "csharp",
-          "next",
-          "tailwind",
-          "theta"
+          "Reactjs",
+          "Axios",
+          "css",
+          "JavaScript",
+          "Figma"
         ]
       }
     ]

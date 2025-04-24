@@ -94,47 +94,59 @@
     "subtitle": "This is not a complete list but rather a selection of projects I have contributed to.",
     "projectsData": [
       {
-        "title": "Alpha",
-        "description": "Alpha is a project management tool that helps teams collaborate and track progress.",
-        "link": "https://delta.com",
+        "title": "Digimenu",
+        "description": "Digital menu manager with various features like price editing, image changes, deletion, adding categories and items with scanning.",
+        "link": "https://www.mydigimenu.ir",
+        "image": "/images/qrmenuEN.webp",
         "technologies": [
-          "vue",
-          "next",
-          "tailwind",
-          "theta"
+          "React",
+          "Express",
+          "MongoDB",
+          "nodejs",
+          "Material-ui",
+          "javascript",
+          "JavaScript",
+          "HTML",
+          "CSS"
         ]
       },
       {
-        "title": "Beta",
-        "description": "Beta is a project management tool that helps teams collaborate and track progress.",
-        "link": "https://delta.com",
+        "title": "Abolfazl Chaman",
+        "description": "My website and portfolio based on raw web languages with a neomorphic design.",
+        "link": "https://www.abolfazlchaman.ir",
+        "image": "/images/portfoiloEN.webp",
         "technologies": [
-          "react",
-          "next",
-          "tailwind",
-          "theta"
+          "JavaScript",
+          "HTML5",
+          "CSS3",
+          "iconify",
+          "Figma"
         ]
       },
       {
-        "title": "Theta",
-        "description": "Theta is a project management tool that helps teams collaborate and track progress.",
-        "link": "https://delta.com",
+        "title": "Visabird",
+        "description": "An open-source app to view foreign companies from around the world that have issued work visas in various job sectors.",
+        "link": "https://www.visabird.ir",
+        "image": "/images/visabird.webp",
         "technologies": [
-          "python",
-          "next",
-          "tailwind",
-          "theta"
+          "Nextjs",
+          "TailwindCss",
+          "javascript",
+          "CSS",
+          "HTML"
         ]
       },
       {
-        "title": "Hexa",
-        "description": "Hexa is a project management tool that helps teams collaborate and track progress.",
-        "link": "https://delta.com",
+        "title": "Ultradeal",
+        "description": "Real-time prices and fluctuations of the top 300 cryptocurrencies",
+        "link": "https://www.ultradeal.ir",
+        "image": "/images/cryptoman.webp",
         "technologies": [
-          "csharp",
-          "next",
-          "tailwind",
-          "theta"
+          "Reactjs",
+          "Axios",
+          "css",
+          "JavaScript",
+          "Figma"
         ]
       }
     ]

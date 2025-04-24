@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "../ui/button";
-import img from "../../../public/about.webp";
+import img from "../../../public/images/about.webp";
 import { useLanguage } from "@/contexts/language-context";
 import { FaExternalLinkAlt } from "react-icons/fa";
 

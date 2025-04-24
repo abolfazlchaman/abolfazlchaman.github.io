@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { SiGithub, SiLinkedin, SiGmail, SiTelegram } from "react-icons/si";
 import { IoLogoWhatsapp } from "react-icons/io";
 import Image from "next/image";
-import img from "../../../public/img.webp";
+import img from "../../../public/images/img.webp";
 import { useLanguage } from "@/contexts/language-context";
 
 const iconMap: Record<string, React.ElementType> = {

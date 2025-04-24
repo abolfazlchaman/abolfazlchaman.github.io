@@ -25,6 +25,8 @@ export function Project({ title, link, tech, description, image }: ProjectProps)
         {title}
       </a>
       </h3>
+      <div className="container bg-white dark:bg-black/10 p-6 rounded-2xl shadow-[0px_4px_30px_0px_rgba(0,0,0,0.20)] dark:shadow-[0px_4px_30px_0px_rgba(255,255,255,0.10)]">
+
       {imageSrc ? (
         <Image
           src={imageSrc}
@@ -36,6 +38,7 @@ export function Project({ title, link, tech, description, image }: ProjectProps)
       ) : (
         <div className="w-full h-48 bg-foreground rounded-sm" />
       )}
+      </div>
       <div className="flex flex-nowrap justify-center my-4">
         {tech.map((tech) => (
           <span

@@ -11,15 +11,24 @@ export default async function Page({ params }: { params: Promise<{ lang: "en" | 
   const dict = await getDictionary(lang);
 
   return (
-    <main>
-      <Navigation fullName={dict.developerInfo.fullName} />
-      <div className="container md:px-40 lg:px-60 xl:px-80 px-10 min-w-full">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-      </div>
-      <Footer />
-    </main>
+<main>
+  <Navigation />
+  <div className="container md:px-40 xl:px-60 px-10 min-w-full">
+    <section id="hero" className="scroll-mt-20">
+      <Hero />
+    </section>
+    <section id="about" className="scroll-mt-20">
+      <About />
+    </section>
+    <section id="skills" className="scroll-mt-20">
+      <Skills />
+    </section>
+    <section id="projects" className="scroll-mt-20">
+      <Projects />
+    </section>
+  </div>
+  <Footer />
+</main>
+
   );
 }

@@ -141,19 +141,16 @@
   code {
     @apply font-mono;
   }
-  :root[dir="rtl"] {
+  :root[dir='rtl'] {
     direction: rtl;
-  }
-
-  :root[dir="rtl"] * {
     text-align: right;
   }
 
-  :root[dir="ltr"] {
+  :root[dir='ltr'] {
     direction: ltr;
-  }
-
-  :root[dir="ltr"] * {
     text-align: left;
   }
+}
+html {
+  scroll-behavior: smooth;
 }

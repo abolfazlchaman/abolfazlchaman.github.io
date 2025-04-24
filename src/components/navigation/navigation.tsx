@@ -3,17 +3,20 @@
 import * as React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/theme-toggler/theme-toggler";
 import { LanguageSelector } from "@/components/language-selector/language-selector";
 import { useLanguage } from "@/contexts/language-context";
-import { SiHomeadvisor, SiCircle, SiGithub, SiBloglovin } from "react-icons/si";
+import { SiBloglovin } from "react-icons/si";
 import { Menu, X } from "lucide-react";
+import { FaInfo, FaTools } from "react-icons/fa";
+import { MdHomeFilled } from "react-icons/md";
+import { FaGear } from "react-icons/fa6";
 
 const getNavigationItems = (dict: any) => [
-  { label: dict.navigation.home, icon: SiHomeadvisor, href: "/" },
-  { label: dict.navigation.about, icon: SiCircle, href: "/about" },
-  { label: dict.navigation.projects, icon: SiGithub, href: "/projects" },
+  { label: dict.navigation.home, icon: MdHomeFilled, href: "#hero" },
+  { label: dict.navigation.about, icon: FaInfo, href: "#about" },
+  { label: dict.navigation.skills, icon: FaGear, href: "#skills" },
+  { label: dict.navigation.projects, icon: FaTools, href: "#projects" },
   { label: dict.navigation.blog, icon: SiBloglovin, href: "/blog" },
 ];
 
@@ -30,7 +33,7 @@ export function Navigation() {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex md:items-center md:justify-end md:flex-1">
+        <div className="hidden md:flex md:items-center justify-center md:flex-1">
           <div className="flex items-center space-x-6 px-6">
             {navigationItems.map((item) => (
               <Link
@@ -45,8 +48,8 @@ export function Navigation() {
         </div>
 
         {/* Theme and Language Controls */}
-        <div className="hidden md:flex md:items-center justify-end">
-          <div className="flex items-center gap-4 border-l pl-6 rtl:border-r rtl:pr-6 rtl:pl-0 rtl:border-l-0">
+        <div className="hidden md:flex md:items-center justify-center">
+          <div className="flex items-center gap-4 pl-6 rtl:pr-6 rtl:pl-0">
             <ModeToggle />
             <LanguageSelector />
           </div>

@@ -2,45 +2,24 @@
 
 import { Button } from "@/components/ui/button";
 import { SiGithub, SiLinkedin, SiGmail, SiTelegram } from "react-icons/si";
+import { IoLogoWhatsapp } from "react-icons/io";
 import Image from "next/image";
 import img from "../../../public/img.webp";
 import { useLanguage } from "@/contexts/language-context";
-import { IoLogoWhatsapp } from "react-icons/io";
 
-const socialLinks = [
-  { icon: SiGithub, href: "https://github.com/abolfazlchaman", label: "GitHub" },
-  { icon: SiGmail, href: "mailto:abolfazl.chaman@gmail.com", label: "Email" },
-  { icon: SiLinkedin, href: "https://linkedin.com/in/abolfazlchaman", label: "LinkedIn" },
-  { icon: SiTelegram, href: "https://t.me/abolfazlchaman", label: "Telegram" },
-  { icon: IoLogoWhatsapp, href: "https://wa.me/+989171234567", label: "WhatsApp" },
-];
+const iconMap: Record<string, React.ElementType> = {
+  github: SiGithub,
+  email: SiGmail,
+  linkedin: SiLinkedin,
+  telegram: SiTelegram,
+  whatsapp: IoLogoWhatsapp,
+};
 
 export function Hero() {
   const { dict } = useLanguage();
 
-  const dictionary = dict as {
-    developerInfo: {
-      fullName: string;
-      profession: string;
-      experience: string;
-      location: string;
-    };
-    theme: {
-      toggle: string;
-      light: string;
-      dark: string;
-      system: string;
-    };
-    navigation: {
-      home: string;
-      about: string;
-      projects: string;
-      blog: string;
-      toggle_menu: string;
-    };
-  };
-
-  const { fullName, profession, experience, location } = { ...dictionary.developerInfo };
+  const { fullName, profession, experience, location } = dict.developerInfo;
+  const socialLinks = dict.socialLinks || [];
 
   return (
     <div className="container min-h-[calc(100vh-64px)] min-w-full flex flex-col md:flex-row items-center justify-center md:justify-around mt-16">
@@ -55,23 +34,29 @@ export function Hero() {
       </div>
       <div className="space-y-2 flex flex-col justify-center items-center text-center">
         <div className="flex flex-wrap justify-center gap-2">
-          {socialLinks.map((link) => (
-            <Button
-              key={link.label}
-              variant="outline"
-              size="sm"
-              asChild
-              className="gap-2">
-              <a
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.label}>
-                <link.icon className="h-4 w-4" />
-                {link.label}
-              </a>
-            </Button>
-          ))}
+          {socialLinks.map((link: any) => {
+            const Icon = iconMap[link.key];
+            if (!Icon) return null;
+            return (
+              <Button
+                key={link.label}
+                variant="outline"
+                size="sm"
+                asChild
+                className="gap-2"
+              >
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                >
+                  <Icon className="h-4 w-4" />
+                  {link.label}
+                </a>
+              </Button>
+            );
+          })}
         </div>
         <h1 className="text-3xl md:text-4xl font-semibold tracking-tight my-5 text-shadow">
           {fullName}

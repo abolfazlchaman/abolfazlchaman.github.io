@@ -6,6 +6,33 @@
     "experience": "5+ years of experience",
     "location": "Shiraz, Iran"
   },
+  "socialLinks": [
+    {
+      "key": "github",
+      "href": "https://github.com/abolfazlchaman",
+      "label": "GitHub"
+    },
+    {
+      "key": "email",
+      "href": "mailto:abolfazl.chaman@gmail.com",
+      "label": "Email"
+    },
+    {
+      "key": "linkedin",
+      "href": "https://linkedin.com/in/abolfazlchaman",
+      "label": "LinkedIn"
+    },
+    {
+      "key": "telegram",
+      "href": "https://t.me/abolfazlchaman",
+      "label": "Telegram"
+    },
+    {
+      "key": "whatsapp",
+      "href": "https://wa.me/+989171234567",
+      "label": "WhatsApp"
+    }
+  ],
   "theme": {
     "toggle": "Toggle theme",
     "light": "Light",

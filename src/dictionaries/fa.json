@@ -6,6 +6,33 @@
     "experience": "۵+ سال تجربه",
     "location": "شیراز، ایران"
   },
+  "socialLinks": [
+    {
+      "key": "github",
+      "href": "https://github.com/abolfazlchaman",
+      "label": "گیت‌هاب"
+    },
+    {
+      "key": "email",
+      "href": "mailto:abolfazl.chaman@gmail.com",
+      "label": "ایمیل"
+    },
+    {
+      "key": "linkedin",
+      "href": "https://linkedin.com/in/abolfazlchaman",
+      "label": "لینکدین"
+    },
+    {
+      "key": "telegram",
+      "href": "https://t.me/abolfazlchaman",
+      "label": "تلگرام"
+    },
+    {
+      "key": "whatsapp",
+      "href": "https://wa.me/+989171234567",
+      "label": "واتساپ"
+    }
+  ],
   "theme": {
     "toggle": "تغییر تم",
     "light": "روشن",

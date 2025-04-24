@@ -8,6 +8,7 @@ export interface TranslationDict {
     experience: string
     location: string
   }
+  socialLinks: []
   theme: {
     toggle: string
     light: string

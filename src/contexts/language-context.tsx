@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
@@ -28,27 +28,28 @@ const LanguageContext = createContext<LanguageContextType>({
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [cookies, setCookie] = useCookies(["language"]);
-  const pathLang = pathname?.split("/")[1] || "en";
-  const urlLang = pathLang === "fa" ? "fa" : "en-US";
+  
+  const pathLang = pathname?.split("/")[1] || "en"; // Get language from the pathname, default to "en"
+  const urlLang = pathLang === "fa" ? "fa" : "en-US"; // Adjust for "fa" or "en-US"
 
   const [language, setLanguageState] = useState<ValidLanguage>(urlLang);
-  const [dict, setDict] = useState(language === "fa" ? fa : en);
+  const [dict, setDict] = useState<typeof en | typeof fa>(language === "fa" ? fa : en);
 
   const setLanguage = (lang: ValidLanguage) => {
     if (isValidLanguage(lang)) {
       setLanguageState(lang);
-      setCookie("language", lang, { path: "/", maxAge: 31536000 });
+      setCookie("language", lang, { path: "/", maxAge: 31536000 }); // Save in cookie
     }
   };
 
   useEffect(() => {
     if (language !== urlLang) {
-      setLanguage(urlLang);
+      setLanguage(urlLang); // Sync the language state with the URL language
     }
   }, [urlLang]);
 
   useEffect(() => {
-    getDictionary(language === "en-US" ? "en" : language).then(setDict);
+    getDictionary(language === "en-US" ? "en" : language).then(setDict); // Fetch the dictionary
   }, [language]);
 
   return (

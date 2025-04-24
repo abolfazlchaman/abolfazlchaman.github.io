@@ -33,8 +33,8 @@ export function Navigation() {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex md:items-center justify-center md:flex-1">
-          <div className="flex items-center space-x-6 px-6">
+        <div className="hidden md:flex md:items-start justify-start md:flex-1">
+          <div className="flex items-center space-x-6 px-6 rtl:border-r-2 rtl:mr-6 border-muted ltr:border-l-2 ltr:ml-6">
             {navigationItems.map((item) => (
               <Link
                 key={item.href}

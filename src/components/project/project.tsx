@@ -1,5 +1,6 @@
 // src/components/project/project.tsx
 import Image from "next/image";
+import { FiExternalLink } from "react-icons/fi";
 
 export interface ProjectProps {
   title: string;
@@ -19,7 +20,8 @@ export function Project({ title, link, tech, description, image }: ProjectProps)
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-lg text-blue-600 hover:text-blue-800">
+        className="flex items-center justify-center text-lg text-foreground hover:text-muted-foreground underline underline-offset-4">
+        <FiExternalLink size={20} className="mx-1"/>
         {title}
       </a>
       </h3>
@@ -32,7 +34,7 @@ export function Project({ title, link, tech, description, image }: ProjectProps)
           className="object-cover"
         />
       ) : (
-        <div className="w-full h-48 bg-gray-400 dark:bg-gray-600" />
+        <div className="w-full h-48 bg-foreground rounded-sm" />
       )}
       <div className="flex flex-nowrap justify-center my-4">
         {tech.map((tech) => (

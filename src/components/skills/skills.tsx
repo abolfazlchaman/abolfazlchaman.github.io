@@ -38,11 +38,12 @@ export function Skills() {
       <p className="text-lg text-muted-foreground text-justify mb-10 max-w-3xl">
         {dict.skills.sub}
       </p>
-      <div className="flex flex-wrap justify-evenly gap-10 max-w-6xl">
-        {skills.map((skill, index) => (
-          <Skill key={index} name={skill.name} icon={skill.icon} />
-        ))}
-      </div>
+  <div className="w-full h-full place-items-center content-center items-center grid grid-cols-3 md:grid-cols-5 gap-10 min-h-[calc(2*80px+1.5rem)]">
+    {skills.map((skill, index) => (
+      <Skill key={index} name={skill.name} icon={skill.icon} />
+    ))}
+  </div>
+
     </section>
   );
 }

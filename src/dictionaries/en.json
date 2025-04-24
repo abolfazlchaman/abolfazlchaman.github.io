@@ -42,6 +42,7 @@
   "navigation": {
     "home": "Home",
     "about": "About",
+    "skills": "Skills",
     "projects": "Projects",
     "blog": "Blog",
     "toggle_menu": "Toggle menu"

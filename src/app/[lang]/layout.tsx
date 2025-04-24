@@ -39,23 +39,18 @@ export const metadata: Metadata = {
   },
 };
 
-export async function generateStaticParams() {
-  return [{ lang: "en-US" }, { lang: "fa" }];
-}
-
-export default async function RootLayout({
+export default async function LangLayout({
   children,
   params,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-  params: Promise<{ lang: "en-US" | "fa" }>;
-}>) {
-  const resolvedParams = await params;
-  const dir = resolvedParams.lang === "fa" ? "rtl" : "ltr";
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  const dir = lang === "fa" ? "rtl" : "ltr";
+
   return (
-    <html
-      lang={resolvedParams.lang}
-      dir={dir}>
+    <html lang={lang} dir={dir}>
       <body className={`${shabnam.variable} ${geistMono.variable} antialiased`}>
         <Providers>{children}</Providers>
       </body>

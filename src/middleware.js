@@ -2,66 +2,88 @@ import { match } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 import { NextResponse } from 'next/server'
 
-// Define supported locales with proper BCP 47 tags
-const locales = ['en-US', 'fa-IR']
+const locales = ['en-US', 'fa']
 const defaultLocale = 'en-US'
 
 function getLocale(request) {
-  try {
-    const negotiator = new Negotiator({
-      headers: {
-        'accept-language': request.headers.get('accept-language') || defaultLocale
-      }
-    })
-    
-    // Normalize language codes consistently
-    const languages = negotiator.languages().map(lang => {
-      switch(lang.toLowerCase()) {
-        case 'fa': return 'fa-IR'
-        case 'en': return 'en-US'
-        default: return lang
-      }
-    })
-    
-    return match(languages, locales, defaultLocale)
-  } catch (error) {
-    console.error('Locale matching error:', error instanceof Error ? error.message : String(error))
-    return defaultLocale
+  const cookieLang = request.cookies.get('language')?.value
+  if (cookieLang && locales.includes(cookieLang)) {
+    return cookieLang
   }
+
+  const negotiator = new Negotiator({
+    headers: {
+      'accept-language': request.headers.get('accept-language') || defaultLocale,
+    },
+  })
+
+  const languages = negotiator.languages().map(lang => {
+    switch (lang.toLowerCase()) {
+      case 'fa': return 'fa'
+      case 'en': return 'en-US'
+      default: return lang
+    }
+  })
+
+  return match(languages, locales, defaultLocale)
 }
 
 export function middleware(request) {
   const pathname = request.nextUrl.pathname
-  
-  // Redirect /en paths to root
+  const cookieLang = request.cookies.get('language')?.value
+
+  // Handle /en → redirect to /
   if (pathname.startsWith('/en')) {
-    const newPath = pathname.replace(/^\/en/, '') || '/'
-    const newUrl = new URL(newPath, request.url)
-    return NextResponse.redirect(newUrl)
+    if (cookieLang !== 'en-US') {
+      const response = NextResponse.redirect(new URL(pathname.replace(/^\/en/, '') || '/', request.url))
+      response.cookies.set('language', 'en-US', { path: '/', maxAge: 31536000 })
+      return response
+    }
+    return NextResponse.next()  // No change needed if the cookie already matches
   }
 
-  // Skip if path already starts with /fa
+  // Handle /fa → check if cookie is not 'fa' and update it if necessary
   if (pathname.startsWith('/fa')) {
-    return
+    if (cookieLang !== 'fa') {
+      const response = NextResponse.next()
+      response.cookies.set('language', 'fa', { path: '/', maxAge: 31536000 })
+      return response
+    }
+    return NextResponse.next()  // No change needed if the cookie already matches
   }
 
-  const locale = getLocale(request).split('-')[0]
-
-  if (locale === 'en') {
-    // Internal rewrite to /en while keeping URL as-is
-    const newUrl = new URL(`/en${pathname}`, request.url)
-    return NextResponse.rewrite(newUrl)
+  // If the user is on the home route or an unrecognized route, determine language from path
+  if (pathname === '/' || pathname.startsWith('/en') || pathname.startsWith('/fa')) {
+    if (pathname.startsWith('/fa') && cookieLang !== 'fa') {
+      const response = NextResponse.redirect(new URL('/fa' + pathname.slice(3), request.url))
+      response.cookies.set('language', 'fa', { path: '/', maxAge: 31536000 })
+      return response
+    }
+    if (pathname.startsWith('/en') && cookieLang !== 'en-US') {
+      const response = NextResponse.redirect(new URL('/en' + pathname.slice(3), request.url))
+      response.cookies.set('language', 'en-US', { path: '/', maxAge: 31536000 })
+      return response
+    }
   }
 
-  // Redirect for non-English locales
-  const newUrl = new URL(`/${locale}${pathname}`, request.url)
-  return NextResponse.redirect(newUrl)
+  // If user is not on a /en or /fa path, determine language from cookie or browser
+  const detectedLocale = getLocale(request)
+
+  if (detectedLocale === 'fa') {
+    const newUrl = new URL(`/fa${pathname}`, request.url)
+    const response = NextResponse.redirect(newUrl)
+    response.cookies.set('language', 'fa', { path: '/', maxAge: 31536000 })
+    return response
+  }
+
+  const response = NextResponse.rewrite(new URL(`/en${pathname}`, request.url))
+  response.cookies.set('language', 'en-US', { path: '/', maxAge: 31536000 })
+  return response
 }
 
 export const config = {
   matcher: [
-    // Match all paths except those starting with /fa and static assets
-    '/((?!fa|_next|api|favicon.ico).*)',
-    '/en/:path*'
+    '/((?!_next|fa|api|favicon.ico|fonts|images).*)',
+    '/en/:path*',
   ]
 }

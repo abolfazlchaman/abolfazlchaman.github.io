@@ -18,7 +18,7 @@ export function About() {
   const aboutDict = dict.about as AboutDict;
   return (
     <section className="container min-h-[calc(100vh-64px)] min-w-full flex md:flex-row flex-col-reverse items-center justify-center">
-      <div className="space-y-2 flex text-justify md:flex-col justify-center items-center md:mx-10 md:flex-col">
+      <div className="space-y-2 flex text-justify flex-col justify-center items-center md:mx-10">
         <h2 className="text-3xl font-bold mb-4">{aboutDict.title}</h2>
 
         <p

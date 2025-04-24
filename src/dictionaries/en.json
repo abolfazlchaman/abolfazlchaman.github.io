@@ -61,6 +61,28 @@
     "title": "Some of the Technologies I've mastered",
     "sub": "This is not an exhaustive list, but rather a selection of my favorites."
   },
+  "languages": {
+    "title": "Languages",
+    "items": {
+      "fa": "Farsi(Persian) - Native",
+      "en": "English - C1 Advanced",
+      "de": "German - B1 Intermediate",
+      "ar": "Arabic - Basic",
+      "ru": "Russian - Basic"
+    }
+  },
+  "softSkills": {
+    "title": "Soft Skills",
+    "items": [
+      "Problem Solving",
+      "Critical Thinking",
+      "Communication",
+      "Teamwork",
+      "Adaptability",
+      "Leadership",
+      "Creativity"
+    ]
+  },
   "projects": {
     "title": "Handful of projects I've collaborated on",
     "subtitle": "This is not a complete list but rather a selection of projects I have contributed to.",

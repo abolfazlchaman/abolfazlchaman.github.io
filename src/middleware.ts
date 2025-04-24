@@ -34,6 +34,14 @@ function getLocale (request) {
 export function middleware (request) {
   const pathname = request.nextUrl.pathname
   const cookieLang = request.cookies.get('language')?.value
+  if (
+    pathname.startsWith('/_next') ||
+    pathname.startsWith('/favicon.ico') ||
+    pathname.startsWith('/images') ||
+    pathname.startsWith('/fonts')
+  ) {
+    return NextResponse.next()
+  }
 
   // Handle /en → redirect to / if language is not 'en-US'
   if (pathname.startsWith('/en')) {

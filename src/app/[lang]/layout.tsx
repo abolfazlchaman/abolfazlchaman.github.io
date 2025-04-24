@@ -14,23 +14,23 @@ const geistMono = Geist_Mono({
 const shabnam = localFont({
   src: [
     {
-      path: "../../../public/fonts/Shabnam-Light.woff2", // Ensure path is correct, fonts should be under public/fonts
+      path: "../fonts/Shabnam-Light.woff2", // Ensure path is correct, fonts should be under public/fonts
       weight: "300",
       style: "normal",
     },
     {
-      path: "../../../public/fonts/Shabnam.woff2", // Ensure path is correct
+      path: "../fonts/Shabnam.woff2", // Ensure path is correct
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../../public/fonts/Shabnam-Bold.woff2", // Ensure path is correct
+      path: "../fonts/Shabnam-Bold.woff2", // Ensure path is correct
       weight: "700",
       style: "normal",
     },
   ],
   variable: "--font-shabnam",
-  display: "swap", // Swap is good for preventing invisible text during font loading
+  display: "swap",
 });
 
 // Metadata for the website
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   title: "Abolfazl Chaman",
   description: "My Next.js experimental portfolio",
   icons: {
-    icon: '../../../public/favicon.ico', // Ensure favicon path is correct
+    icon: '/favicon.ico',
   },
 };
 

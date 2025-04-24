@@ -22,7 +22,7 @@ export function Hero() {
   const socialLinks = dict.socialLinks || [];
 
   return (
-    <div className="container min-h-[calc(100vh-64px)] min-w-full flex flex-col md:flex-row items-center justify-center md:justify-around mt-16">
+    <div className="container min-h-[calc(100vh-64px)] min-w-full flex flex-col lg:flex-row items-center justify-center mt-16">
       <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-[0px_4px_30px_0px_rgba(0,0,0,0.20)] dark:shadow-[0px_4px_30px_0px_rgba(255,255,255,0.20)] rotate-[-30deg] transition-transform transform m-10">
         <Image
           src={img.src}

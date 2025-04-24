@@ -23,16 +23,6 @@ export function Project({ title, link, tech, description, image }: ProjectProps)
         {title}
       </a>
       </h3>
-      <div className="flex flex-wrap justify-center mb-4">
-        {tech.map((tech) => (
-          <span
-            key={tech}
-            className="text-lg text-muted-foreground mr-2">
-            {tech}
-          </span>
-        ))}
-      </div>
-      <p className="text-lg text-muted-foreground text-justify mb-4">{description}</p>
       {imageSrc ? (
         <Image
           src={imageSrc}
@@ -42,8 +32,18 @@ export function Project({ title, link, tech, description, image }: ProjectProps)
           className="object-cover"
         />
       ) : (
-        <div className="w-full h-48 bg-gray-200 dark:bg-gray-800" />
+        <div className="w-full h-48 bg-gray-400 dark:bg-gray-600" />
       )}
+      <div className="flex flex-nowrap justify-center my-4">
+        {tech.map((tech) => (
+          <span
+            key={tech}
+            className="text-lg text-muted-foreground mr-2">
+            {tech}
+          </span>
+        ))}
+      </div>
+      <p className="text-lg text-muted-foreground text-justify mb-4">{description}</p>
     </div>
   );
 }

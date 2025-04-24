@@ -16,12 +16,12 @@ export function Projects() {
       <div className="flex flex-col md:flex-row flex-wrap justify-center gap-10">
       {dict.projects.projectsData.map((project, index) => (
     <Project
-      key={index} // Add a unique key for each element
+      key={index}
       title={project.title}
       link={project.link}
       tech={project.technologies}
       description={project.description}
-      image="" // Assuming you'll add an image URL later
+      image=""
     />
   ))}
         {/* Add more projects here */}

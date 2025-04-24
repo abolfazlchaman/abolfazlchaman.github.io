@@ -14,7 +14,7 @@ import { useRouter, usePathname } from "next/navigation"
 import { useCookies } from "react-cookie"
 
 const languages = [
-  { code: "en-US", label: "English", path: "/" },
+  { code: "en-US", label: "English", path: "/en" },
   { code: "fa", label: "فارسی", path: "/fa" },
 ]
 
@@ -45,6 +45,11 @@ export function LanguageSelector() {
     if (detectedLang !== cookies.language) {
       setLanguage(detectedLang)
     }
+
+    if (pathname === "/") {
+      const lang = cookies.language || "en-US"
+      router.push(lang === "fa" ? "/fa" : "/en")
+    }
   }, [])
 
   return (
@@ -65,7 +70,7 @@ export function LanguageSelector() {
             <div className="flex items-center gap-2">
               {lang.label}
             </div>
-            {pathname === lang.path && <span className="text-primary">✓</span>}
+            {pathname?.startsWith(lang.path) && <span className="text-primary">✓</span>}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

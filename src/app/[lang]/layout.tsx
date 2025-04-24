@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   title: "Abolfazl Chaman",
   description: "My Next.js experimental portfolio",
   icons: {
-    icon: '/favicon.ico', // Ensure favicon path is correct
+    icon: '../../../public/favicon.ico', // Ensure favicon path is correct
   },
 };
 

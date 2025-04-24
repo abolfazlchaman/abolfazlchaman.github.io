@@ -49,14 +49,14 @@ export default function Inspiration() {
         <h2 className="text-3xl font-bold flex justify-center">
           {dict.language === 'en' ? 'Inspirations' : 'الهامات'}
         </h2>
-        <div className="text-sm text-nowrap flex my-2 justify-center">
+        {/*TODO <div className="text-sm text-nowrap flex my-2 justify-center">
           <Link
             href={isFarsi ? '/fa/inspirations' : '/inspirations'}
             className="text-muted-foreground hover:underline mx-4"
           >
             {dict.inspiration.seeAllInspirations}
           </Link>
-        </div>
+        </div> */}
         <p className="text-lg mb-6 text-muted-foreground text-justify">{dict.inspiration.description}</p>
 
         <div className="flex flex-col gap-8">

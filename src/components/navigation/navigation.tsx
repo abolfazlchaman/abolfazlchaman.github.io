@@ -8,7 +8,7 @@ import { LanguageSelector } from "@/components/language-selector/language-select
 import { useLanguage } from "@/contexts/language-context";
 import { SiBloglovin } from "react-icons/si";
 import { Menu, X } from "lucide-react";
-import { FaInfo, FaTools } from "react-icons/fa";
+import { FaInfo, FaLightbulb, FaTools } from "react-icons/fa";
 import { MdHomeFilled } from "react-icons/md";
 import { FaGear } from "react-icons/fa6";
 
@@ -17,7 +17,8 @@ const getNavigationItems = (dict: any) => [
   { label: dict.navigation.about, icon: FaInfo, href: "#about" },
   { label: dict.navigation.skills, icon: FaGear, href: "#skills" },
   { label: dict.navigation.projects, icon: FaTools, href: "#projects" },
-  { label: dict.navigation.blog, icon: SiBloglovin, href: "/blog" },
+  { label: dict.navigation.inspirations, icon: FaLightbulb, href: "#inspiration" },
+  // { TODO label: dict.navigation.blog, icon: SiBloglovin, href: "/blog" },
 ];
 
 export function Navigation() {

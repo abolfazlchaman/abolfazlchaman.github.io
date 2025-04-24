@@ -13,14 +13,14 @@ export function Projects() {
       <h2 className="text-3xl font-semibold tracking-tight text-center">
         {dict.projects.title}
       </h2>
-      <div className="text-sm text-nowrap flex my-2 justify-center">
+      {/* TODO <div className="text-sm text-nowrap flex my-2 justify-center">
           <Link
             href={isFarsi ? '/fa/projects' : '/projects'}
             className="text-muted-foreground hover:underline mx-4"
           >
             {isFarsi ? 'مشاهده تمامی پروژه‌ها' : 'See all projects'}
           </Link>
-        </div>
+        </div> */}
       <p className="text-lg text-muted-foreground text-justify mb-10">
       {dict.projects.subtitle}
       </p>

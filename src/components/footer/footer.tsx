@@ -31,7 +31,7 @@ export function Footer() {
 
   return (
     <footer className="container mx-auto p-4 pt-6 mt-6 border-t border-gray-200 dark:border-gray-700">
-      <div className="flex flex-wrap justify-center mb-4">
+      {/*TODO <div className="flex flex-wrap justify-center mb-4">
         {footerLinks.map((link) => (
           <Button
             key={link.label}
@@ -43,7 +43,7 @@ export function Footer() {
             <a href={link.href}>{link.label}</a>
           </Button>
         ))}
-      </div>
+      </div> */}
       <div className="flex flex-wrap justify-center mb-4 gap-2">
         {socialLinks.map((link: any) => {
           const Icon = iconMap[link.key];

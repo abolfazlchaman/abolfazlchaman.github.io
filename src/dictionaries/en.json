@@ -83,6 +83,26 @@
       "Creativity"
     ]
   },
+  "quotes": [
+    {
+      "quote": "Only a fool learns from his own mistakes. The wise man learns from the mistakes of others.",
+      "author": "Otto von Bismarck",
+      "wiki": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
+      "image": "/images/bismarckGS.jpeg"
+    },
+    {
+      "quote": "If you think hiring a professional is expensive, wait until you hire an amateur.",
+      "author": "Red Adair",
+      "wiki": "https://en.wikipedia.org/wiki/Red_Adair",
+      "image": "/images/adairGS.jpeg"
+    },
+    {
+      "quote": "You'll never know how good you might have become unless you try.",
+      "author": "Mike Mentzer",
+      "wiki": "https://en.wikipedia.org/wiki/Mike_Mentzer",
+      "image": "/images/mentzerGS.jpeg"
+    }
+  ],
   "inspiration": {
     "title": "Inspirations",
     "description": "I find inspiration from a variety of people and ideas. Please note that liking a quote or person does not represent my work or endorse any negative actions they may have taken.",

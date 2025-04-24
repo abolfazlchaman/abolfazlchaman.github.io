@@ -78,6 +78,26 @@
     "seeAllInspirations": "مشاهده همه",
     "seeAllQuotes": "مشاهده تمام نقل‌قول‌ها"
   },
+  "quotes": [
+    {
+      "quote": "فقط یک احمق از اشتباهات خودش یاد می‌گیرد. انسان خردمند از اشتباهات دیگران درس می‌گیرد.",
+      "author": "اتو فون بیسمارک",
+      "wiki": "https://fa.wikipedia.org/wiki/%D9%85%D8%A7%DB%8C%DA%A9_%D9%85%D9%86%D8%AA%D8%B2%D8%B1",
+      "image": "/images/bismarckGS.jpeg"
+    },
+    {
+      "quote": "اگر فکر می‌کنید استخدام یک حرفه‌ای گران است، صبر کنید تا یک آماتور استخدام کنید.",
+      "author": "رد آدیر",
+      "wiki": "https://fa.wikipedia.org/wiki/%D8%B1%D8%AF_%D8%A7%D8%AF%D8%A7%DB%8C%D8%B1",
+      "image": "/images/adairGS.jpeg"
+    },
+    {
+      "quote": "تا زمانی که امتحان نکنید، هیچ‌وقت نمی‌فهمید که ممکن بود چقدر خوب شوید.",
+      "author": "مایک منتزر",
+      "wiki": "https://fa.wikipedia.org/wiki/%D8%A7%D8%AA%D9%88_%D9%81%D9%88%D9%86_%D8%A8%DB%8C%D8%B3%D9%85%D8%A7%D8%B1%DA%A9",
+      "image": "/images/mentzerGS.jpeg"
+    }
+  ],
   "softSkills": {
     "title": "مهارت‌های نرم",
     "items": [

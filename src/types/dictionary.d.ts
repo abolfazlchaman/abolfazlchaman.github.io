@@ -1,4 +1,9 @@
 // types/translation.d.ts
+export interface Quote {
+  quote: string
+  author: string
+  wiki: string
+}
 
 export interface TranslationDict {
   language: string
@@ -8,13 +13,14 @@ export interface TranslationDict {
     experience: string
     location: string
   }
-  socialLinks: []
+  socialLinks: { platform: string; url: string }[]
   theme: {
     toggle: string
     light: string
     dark: string
     system: string
   }
+  quotes: Quote[]
   navigation: {
     home: string
     about: string
@@ -42,5 +48,9 @@ export interface TranslationDict {
       link: string
       technologies: string[]
     }[]
+  }
+  inspiration: {
+    description: string
+    seeAllInspirations: string
   }
 }

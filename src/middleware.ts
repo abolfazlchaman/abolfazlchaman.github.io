@@ -1,11 +1,11 @@
 import { match } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 const locales = ['en-US', 'fa']
 const defaultLocale = 'en-US'
 
-function getLocale (request) {
+function getLocale (request: NextRequest) {
   const cookieLang = request.cookies.get('language')?.value
   if (cookieLang && locales.includes(cookieLang)) {
     return cookieLang
@@ -31,7 +31,7 @@ function getLocale (request) {
   return match(languages, locales, defaultLocale)
 }
 
-export function middleware (request) {
+export function middleware (request: NextRequest) {
   const pathname = request.nextUrl.pathname
   const cookieLang = request.cookies.get('language')?.value
   if (

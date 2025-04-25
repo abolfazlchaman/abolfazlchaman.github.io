@@ -20,7 +20,7 @@ export function Projects() {
         </div> */}
       <p className="text-lg text-muted-foreground text-justify mb-10">{dict.projects.subtitle}</p>
       <div className="flex flex-col md:flex-row flex-wrap justify-center gap-10">
-        {dict.projects.projectsData.map((project, index) => (
+        {dict.projects.projectsData.map((project) => (
           <div
             key={project.link}
             className="flex flex-col justify-between items-center w-full md:w-1/2 xl:w-1/3 min-h-fit h-[500px] overflow-scroll">

@@ -84,7 +84,7 @@ export function Hero() {
       {/* 👨‍💻 Text content */}
       <div className="space-y-2 flex flex-col justify-center items-center text-center">
         <div className="flex flex-wrap md:flex-nowrap justify-center gap-2">
-          {socialLinks.map((link: any) => {
+          {socialLinks.map((link) => {
             const Icon = iconMap[link.key];
             if (!Icon) return null;
             return (

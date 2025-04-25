@@ -5,11 +5,11 @@ import { useLanguage } from "@/contexts/language-context";
 import { SiGithub, SiGmail, SiLinkedin, SiTelegram } from "react-icons/si";
 import { IoLogoWhatsapp } from "react-icons/io";
 
-const footerLinks = [
-  { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Blog", href: "/blog" },
-];
+// const footerLinks = [
+//   { label: "About", href: "/about" },
+//   { label: "Projects", href: "/projects" },
+//   { label: "Blog", href: "/blog" },
+// ];
 
 const iconMap: Record<string, React.ElementType> = {
   github: SiGithub,
@@ -45,7 +45,7 @@ export function Footer() {
         ))}
       </div> */}
       <div className="flex flex-wrap justify-center mb-4 gap-2">
-        {socialLinks.map((link: any) => {
+        {socialLinks.map((link) => {
           const Icon = iconMap[link.key];
           if (!Icon) return null;
 

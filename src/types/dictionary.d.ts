@@ -54,3 +54,16 @@ export interface TranslationDict {
     seeAllInspirations: string
   }
 }
+export type NavLinksType = {
+  navigation: {
+    home: string
+    about: string
+    skills: string
+    projects: string
+    inspirations: string
+    // blog?: string;
+  }
+  developerInfo: {
+    fullName: string
+  }
+}

@@ -27,8 +27,8 @@ const LanguageContext = createContext<LanguageContextType>({
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const [cookies, setCookie] = useCookies(["language"]);
-  
+  const [_cookies, setCookie] = useCookies(["language"]);
+
   const pathLang = pathname?.split("/")[1] || "en"; // Get language from the pathname, default to "en"
   const urlLang = pathLang === "fa" ? "fa" : "en-US"; // Adjust for "fa" or "en-US"
 
@@ -44,9 +44,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (language !== urlLang) {
-      setLanguage(urlLang); // Sync the language state with the URL language
+      setLanguage(urlLang);
     }
-  }, [urlLang]);
+  }, [urlLang, language, setLanguage]);
 
   useEffect(() => {
     getDictionary(language === "en-US" ? "en" : language).then(setDict); // Fetch the dictionary

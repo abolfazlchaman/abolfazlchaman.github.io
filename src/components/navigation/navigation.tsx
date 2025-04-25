@@ -6,13 +6,14 @@ import { cn } from "@/lib/utils";
 import { ModeToggle } from "@/components/theme-toggler/theme-toggler";
 import { LanguageSelector } from "@/components/language-selector/language-selector";
 import { useLanguage } from "@/contexts/language-context";
-import { SiBloglovin } from "react-icons/si";
+// import { SiBloglovin } from "react-icons/si";
 import { Menu, X } from "lucide-react";
 import { FaInfo, FaLightbulb, FaTools } from "react-icons/fa";
 import { MdHomeFilled } from "react-icons/md";
 import { FaGear } from "react-icons/fa6";
+import { NavLinksType } from "@/types/dictionary";
 
-const getNavigationItems = (dict: any) => [
+const getNavigationItems = (dict: NavLinksType) => [
   { label: dict.navigation.home, icon: MdHomeFilled, href: "/#hero" },
   { label: dict.navigation.about, icon: FaInfo, href: "/#about" },
   { label: dict.navigation.skills, icon: FaGear, href: "/#skills" },

@@ -13,11 +13,11 @@ import { MdHomeFilled } from "react-icons/md";
 import { FaGear } from "react-icons/fa6";
 
 const getNavigationItems = (dict: any) => [
-  { label: dict.navigation.home, icon: MdHomeFilled, href: "#hero" },
-  { label: dict.navigation.about, icon: FaInfo, href: "#about" },
-  { label: dict.navigation.skills, icon: FaGear, href: "#skills" },
-  { label: dict.navigation.projects, icon: FaTools, href: "#projects" },
-  { label: dict.navigation.inspirations, icon: FaLightbulb, href: "#inspiration" },
+  { label: dict.navigation.home, icon: MdHomeFilled, href: "/#hero" },
+  { label: dict.navigation.about, icon: FaInfo, href: "/#about" },
+  { label: dict.navigation.skills, icon: FaGear, href: "/#skills" },
+  { label: dict.navigation.projects, icon: FaTools, href: "/#projects" },
+  { label: dict.navigation.inspirations, icon: FaLightbulb, href: "/#inspiration" },
   // { TODO label: dict.navigation.blog, icon: SiBloglovin, href: "/blog" },
 ];
 
@@ -31,7 +31,11 @@ export function Navigation() {
       <div className="container min-w-full flex h-16 items-center justify-between px-4 md:px-6">
         <div className="relative z-50">
           <h1 className={cn("font-semibold", isOpen && "text-foreground")}>
-            {dict.developerInfo.fullName}
+            <Link
+              href="/#hero"
+              className="text-inherit hover:text-primary transition-colors">
+              {dict.developerInfo.fullName}
+            </Link>
           </h1>
         </div>
 

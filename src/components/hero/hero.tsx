@@ -53,7 +53,6 @@ export function Hero() {
     } else if (isWithinRange(christmasStart, 15)) {
       setCelebration("christmas");
     }
-    setCelebration("birthday");
     // Future Easter Eggs:
     // if (today.getDate() === adoptCatDay.day && today.getMonth() + 1 === adoptCatDay.month && today.getFullYear() === adoptCatDay.year) {
     //   setCelebration("adoptCat");

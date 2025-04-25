@@ -30,7 +30,7 @@ export function Footer() {
   const socialLinks = dict.socialLinks || [];
 
   return (
-    <footer className="container mx-auto p-4 pt-6 mt-6 border-t border-gray-200 dark:border-gray-700">
+    <footer className="container mx-auto p-4 pt-6 mt-6 border-t bg-background/95">
       {/*TODO <div className="flex flex-wrap justify-center mb-4">
         {footerLinks.map((link) => (
           <Button
@@ -55,14 +55,12 @@ export function Footer() {
               variant="outline"
               size="sm"
               asChild
-              className="gap-2"
-            >
+              className="gap-2">
               <a
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={link.label}
-              >
+                aria-label={link.label}>
                 <Icon className="w-4 h-4" />
                 {link.label}
               </a>

@@ -30,7 +30,9 @@ export function Navigation() {
     <nav className="fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
       <div className="container min-w-full flex h-16 items-center justify-between px-4 md:px-6">
         <div className="relative z-50">
-          <h1 className={cn("font-semibold", isOpen && "text-foreground")}>{dict.developerInfo.fullName}</h1>
+          <h1 className={cn("font-semibold", isOpen && "text-foreground")}>
+            {dict.developerInfo.fullName}
+          </h1>
         </div>
 
         {/* Desktop Navigation */}

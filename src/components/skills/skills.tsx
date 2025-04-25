@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useLanguage } from "@/contexts/language-context";
 import { Skill } from "../skill/skill";
 import {
@@ -11,7 +11,7 @@ import {
   SiReact,
   SiRedux,
   SiTailwindcss,
-  SiTypescript
+  SiTypescript,
 } from "react-icons/si";
 
 const skills = [
@@ -31,7 +31,7 @@ export function Skills() {
   const { dict } = useLanguage();
 
   return (
-    <section className="container min-h-[calc(100vh-64px)] min-w-full flex flex-col items-center justify-between py-20">
+    <section className="container justify-center min-h-[calc(100vh-64px)] min-w-full flex flex-col items-center justify-between py-20">
       {/* Hard Skills Section */}
       <h2 className="text-3xl font-semibold tracking-tight mb-5 text-center">
         {dict.skills.title}
@@ -40,16 +40,17 @@ export function Skills() {
         {dict.skills.sub}
       </p>
       <div className="w-full grid grid-cols-3 md:grid-cols-5 gap-10 mb-20 justify-items-center">
-  {skills.map((skill, index) => (
-    <div key={index} className="flex justify-center items-center">
-      <Skill name={skill.name} icon={skill.icon} />
-    </div>
-  ))}
-</div>
-
-
-
-
+        {skills.map((skill, index) => (
+          <div
+            key={index}
+            className="flex justify-center items-center">
+            <Skill
+              name={skill.name}
+              icon={skill.icon}
+            />
+          </div>
+        ))}
+      </div>
 
       {/* Language and Soft Skills Sections */}
       <div className="w-full flex flex-col md:flex-row gap-10 justify-between">
@@ -58,7 +59,11 @@ export function Skills() {
           <h2 className="text-3xl font-semibold tracking-tight mb-5">{dict.languages.title}</h2>
           <ul className="flex flex-wrap gap-4 justify-center text-lg">
             {Object.entries(dict.languages.items).map(([key, label]) => (
-              <li key={key} className="bg-muted px-4 py-2 rounded-xl shadow-sm">{label}</li>
+              <li
+                key={key}
+                className="bg-muted px-4 py-2 rounded-xl shadow-sm">
+                {label}
+              </li>
             ))}
           </ul>
         </section>
@@ -68,7 +73,11 @@ export function Skills() {
           <h2 className="text-3xl font-semibold tracking-tight mb-5">{dict.softSkills.title}</h2>
           <ul className="flex flex-wrap gap-4 justify-center text-lg">
             {dict.softSkills.items.map((skill: string, index: number) => (
-              <li key={index} className="bg-muted px-4 py-2 rounded-xl shadow-sm">{skill}</li>
+              <li
+                key={index}
+                className="bg-muted px-4 py-2 rounded-xl shadow-sm">
+                {skill}
+              </li>
             ))}
           </ul>
         </section>

@@ -7,7 +7,9 @@ export function Projects() {
 
   return (
     <section className="container min-h-[calc(100vh-64px)] min-w-full flex flex-col items-center justify-center my-24">
-      <h2 className="text-3xl font-semibold tracking-tight text-center">{dict.projects.title}</h2>
+      <h2 className="text-3xl mb-5 font-semibold tracking-tight text-center">
+        {dict.projects.title}
+      </h2>
       {/* TODO <div className="text-sm text-nowrap flex my-2 justify-center">
           <Link
             href={isFarsi ? '/fa/projects' : '/projects'}

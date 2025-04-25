@@ -6,6 +6,25 @@
     "experience": "5+ years of experience",
     "location": "Shiraz, Iran"
   },
+  "celebrations": {
+    "birthday": {
+      "title": "🎉 🎂 Happy Birthday!",
+      "line1": "You are now <strong>{age}</strong> years old.",
+      "line2": "I know things get hard sometimes, but I'm proud of you for still being here. Keep going. You matter more than you know.",
+      "footer": "– Your past self who believes in you :)"
+    },
+    "nowruz": {
+      "title": "🌸 Nowruz Mobarak!",
+      "line1": "New year, new opportunities. Take a deep breath and begin again. ✨",
+      "emojiLine": "🍎 🌿 🪔 🧄 🪞 🥚 🌸",
+      "footer": "– Here's to brighter days ahead 🌞"
+    },
+    "christmas": {
+      "title": "🎄 Merry Christmas!",
+      "line1": "Hope you're having a magical day. Don't forget to tell the people you love how much they mean to you. ❤️",
+      "footer": "– You deserve joy, peace, and cozy memories ❄️"
+    }
+  },
   "socialLinks": [
     {
       "key": "github",

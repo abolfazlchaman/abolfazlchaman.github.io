@@ -134,58 +134,54 @@
     "projectsData": [
       {
         "title": "Digimenu",
-        "description": "Digital menu manager with various features like price editing, image changes, deletion, adding categories and items with scanning.",
+        "description": "Digital menu manager with various features like price editing, image changes, deletion, adding categories and items.",
         "link": "https://www.mydigimenu.ir",
         "image": "/images/qrmenuEN.webp",
         "technologies": [
           "React",
+          "Nodejs",
           "Express",
           "MongoDB",
-          "nodejs",
           "Material-ui",
-          "javascript",
-          "JavaScript",
-          "HTML",
-          "CSS"
-        ]
-      },
-      {
-        "title": "Abolfazl Chaman",
-        "description": "My website and portfolio based on raw web languages with a neomorphic design.",
-        "link": "https://www.abolfazlchaman.ir",
-        "image": "/images/portfoiloEN.webp",
-        "technologies": [
-          "JavaScript",
-          "HTML5",
-          "CSS3",
-          "iconify",
-          "Figma"
+          "JavaScript"
         ]
       },
       {
         "title": "Visabird",
-        "description": "An open-source app to view foreign companies from around the world that have issued work visas in various job sectors.",
+        "description": "An open-source app to view tech companies from around the world that have worked with governments, embassies and issued visas in various job sectors.",
         "link": "https://www.visabird.ir",
         "image": "/images/visabird.webp",
         "technologies": [
           "Nextjs",
-          "TailwindCss",
-          "javascript",
-          "CSS",
-          "HTML"
+          "Tailwind",
+          "TypeScript"
         ]
       },
       {
         "title": "Ultradeal",
-        "description": "Real-time prices and fluctuations of the top 300 cryptocurrencies",
+        "description": "A powerful trading platform with real-time stock market data, financial maps, analytics, and advanced tools for smart investing.",
         "link": "https://www.ultradeal.ir",
         "image": "/images/cryptoman.webp",
         "technologies": [
-          "Reactjs",
-          "Axios",
-          "css",
-          "JavaScript",
-          "Figma"
+          "Nextjs",
+          "TypeScript",
+          "React",
+          "Shadcn"
+        ]
+      },
+      {
+        "title": "Abolfazl Chaman",
+        "description": "A redesigned portfolio with a clean and simple UI, hidden easter eggs, and built using modern web technologies for an interactive and engaging experience.",
+        "link": "https://www.abolfazlchaman.ir",
+        "image": "/images/portfoiloEN.webp",
+        "technologies": [
+          "Nextjs",
+          "TypeScript",
+          "i18next",
+          "React",
+          "Tailwind",
+          "Shadcn",
+          "Eslint"
         ]
       }
     ]

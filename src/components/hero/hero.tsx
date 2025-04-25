@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { SiGithub, SiLinkedin, SiGmail, SiTelegram } from "react-icons/si";
 import { IoLogoWhatsapp } from "react-icons/io";
 import Image from "next/image";
-import img from "../../../public/images/img.webp";
+import img from "../../../public/images/AbolfazlChamanFormal.jpg";
 import { useLanguage } from "@/contexts/language-context";
 
 const iconMap: Record<string, React.ElementType> = {
@@ -71,12 +71,12 @@ export function Hero() {
       {celebration === "christmas" && <Snow autorun={{ speed: 30 }} />}
 
       {/* 👤 Profile image */}
-      <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-[0px_4px_30px_0px_rgba(0,0,0,0.20)] dark:shadow-[0px_4px_30px_0px_rgba(255,255,255,0.20)] rotate-[-30deg] transition-transform transform m-10">
+      <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-[0px_4px_30px_0px_rgba(0,0,0,0.20)] dark:shadow-[0px_4px_30px_0px_rgba(255,255,255,0.20)] transition-transform transform m-10">
         <Image
           src={img.src}
           alt={fullName}
           fill
-          className="object-cover aspect-square rounded-full"
+          className="object-cover aspect-square rounded-full object-[left_55%_bottom_90%]"
           priority
         />
       </div>
@@ -106,15 +106,14 @@ export function Hero() {
             );
           })}
         </div>
-
-        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight my-5 text-shadow">
+        <h2 className="text-xl text-muted-foreground mt-2">{profession}</h2>
+        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight my-2 text-shadow">
           {fullName}
           <span className="animate-pulse [animation-duration:0.5s] [animation-iteration-count:infinite] [animation-timing-function:steps(1,start)]">
             {" "}
             _
           </span>
         </h1>
-        <h2 className="text-xl text-muted-foreground">{profession}</h2>
         <p className="text-muted-foreground">{experience}</p>
         <p className="text-muted-foreground">{location}</p>
         {celebration && (

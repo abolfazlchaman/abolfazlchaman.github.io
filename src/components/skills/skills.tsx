@@ -22,7 +22,7 @@ const skills = [
   { name: "Node.js", icon: <SiNodedotjs size={40} /> },
   { name: "GraphQL", icon: <SiGraphql size={40} /> },
   { name: "Redux", icon: <SiRedux size={40} /> },
-  { name: "Tailwind CSS", icon: <SiTailwindcss size={40} /> },
+  { name: "Tailwind", icon: <SiTailwindcss size={40} /> },
   { name: "Jest", icon: <SiJest size={40} /> },
   { name: "Cypress", icon: <SiCypress size={40} /> },
 ];
@@ -31,7 +31,7 @@ export function Skills() {
   const { dict } = useLanguage();
 
   return (
-    <section className="container justify-center min-h-[calc(100vh-64px)] min-w-full flex flex-col items-center justify-between py-20">
+    <section className="container justify-center min-h-[calc(100vh-64px)] min-w-full flex flex-col items-center py-20">
       {/* Hard Skills Section */}
       <h2 className="text-3xl font-semibold tracking-tight mb-5 text-center">
         {dict.skills.title}

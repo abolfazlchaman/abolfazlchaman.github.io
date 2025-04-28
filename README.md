@@ -1,3 +1,5 @@
+# IMPORTANT , legacy content , for my new portfolio code base built with nextjs [visit here](https://github.com/abolfazlchaman/next-portfolio)
+
 # What is this ?
 This is my personal portfolio website where you can find my latest resume, contact details & other general information about me.
 
